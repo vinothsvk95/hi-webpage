@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,36 +18,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* floating hearts */
-
-.heart{
-position:fixed;
-top:-10px;
-font-size:22px;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10px);opacity:1;}
-100%{transform:translateY(100vh);opacity:0;}
-}
-
-/* floating photos */
-
-.floating{
-position:fixed;
-width:120px;
-border-radius:10px;
-animation:float 18s linear infinite;
-opacity:.8;
-}
-
-@keyframes float{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-120vh);}
-}
-
-/* hero page */
+/* HERO PAGE */
 
 .hero{
 height:100vh;
@@ -76,14 +48,12 @@ font-weight:bold;
 margin:10px;
 }
 
-/* main page */
+/* MAIN PAGE */
 
 #mainPage{
 display:none;
 padding:40px;
 }
-
-/* counter */
 
 .counter{
 font-size:22px;
@@ -91,7 +61,7 @@ margin-bottom:30px;
 font-weight:bold;
 }
 
-/* timeline */
+/* TIMELINE */
 
 .timeline{
 max-width:900px;
@@ -119,7 +89,7 @@ transition:.4s;
 transform:scale(1.2);
 }
 
-/* card colors */
+/* CARD COLORS */
 
 .card-wedding{background:linear-gradient(135deg,#FFD700,#FFC107);color:#000;}
 .card-birthday{background:linear-gradient(135deg,#00c6ff,#0072ff);}
@@ -128,69 +98,43 @@ transform:scale(1.2);
 .card-ann1{background:linear-gradient(135deg,#ff416c,#ff4b2b);}
 .card-ann2{background:linear-gradient(135deg,#8e2de2,#4a00e0);}
 
-/* slideshow */
+/* MEMORY SLIDER */
 
-.slideshow-container{
-max-width:700px;
+.memorySlider{
+max-width:900px;
 margin:auto;
+position:relative;
 }
 
-.slide{
+.memorySlide{
 display:none;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+animation:fadeMagic 1.5s;
 }
 
-.slide img{
-width:100%;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+.memorySlide img{
+width:200px;
+height:200px;
+object-fit:cover;
+
+/* HEART SHAPE */
+
+clip-path: path("M100 30 C100 -10, 200 -10, 200 70 C200 140,100 190,100 190 C100 190,0 140,0 70 C0 -10,100 -10,100 30");
+
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeMagic{
+from{opacity:0; transform:scale(.8);}
+to{opacity:1; transform:scale(1);}
 }
 
 </style>
 </head>
 
 <body>
-
-<!-- floating memory frames -->
-
-<img src="img1.jpeg" class="floating" style="left:3%;">
-<img src="img2.jpeg" class="floating" style="left:6%;">
-<img src="img3.jpeg" class="floating" style="left:9%;">
-<img src="img4.jpeg" class="floating" style="left:12%;">
-<img src="img5.jpeg" class="floating" style="left:15%;">
-<img src="img6.jpeg" class="floating" style="left:18%;">
-<img src="img7.jpeg" class="floating" style="left:21%;">
-<img src="img8.jpeg" class="floating" style="left:24%;">
-<img src="img9.jpeg" class="floating" style="left:27%;">
-<img src="img10.jpeg" class="floating" style="left:30%;">
-<img src="img11.jpeg" class="floating" style="left:33%;">
-<img src="img12.jpeg" class="floating" style="left:36%;">
-<img src="img13.jpeg" class="floating" style="left:39%;">
-<img src="img14.jpeg" class="floating" style="left:42%;">
-<img src="img15.jpeg" class="floating" style="left:45%;">
-<img src="img16.jpeg" class="floating" style="left:48%;">
-<img src="img17.jpeg" class="floating" style="left:51%;">
-<img src="img18.jpeg" class="floating" style="left:54%;">
-<img src="img19.jpeg" class="floating" style="left:57%;">
-<img src="img20.jpeg" class="floating" style="left:60%;">
-<img src="img21.jpeg" class="floating" style="left:63%;">
-<img src="img22.jpeg" class="floating" style="left:66%;">
-<img src="img23.jpeg" class="floating" style="left:69%;">
-<img src="img24.jpeg" class="floating" style="left:72%;">
-<img src="img25.jpeg" class="floating" style="left:75%;">
-<img src="img26.jpeg" class="floating" style="left:78%;">
-<img src="img27.jpeg" class="floating" style="left:81%;">
-<img src="img28.jpeg" class="floating" style="left:84%;">
-<img src="img29.jpeg" class="floating" style="left:87%;">
-<img src="img30.jpeg" class="floating" style="left:90%;">
-<img src="img31.jpeg" class="floating" style="left:10%;">
-<img src="img32.jpeg" class="floating" style="left:20%;">
-<img src="img33.jpeg" class="floating" style="left:40%;">
-<img src="img34.jpeg" class="floating" style="left:60%;">
-<img src="img35.jpeg" class="floating" style="left:80%;">
-<img src="img36.jpeg" class="floating" style="left:50%;">
-<img src="img37.jpeg" class="floating" style="left:70%;">
-
-
 
 <!-- FIRST PAGE -->
 
@@ -219,6 +163,7 @@ I love you forever ❤️
 
 </div>
 
+
 <!-- MAIN PAGE -->
 
 <div id="mainPage">
@@ -235,7 +180,7 @@ I love you forever ❤️
 <div class="timeline">
 
 <div class="timeline-item card-wedding">
-<img src="test1.jpg.jpeg">
+<img src="test1.jpeg">
 <div>
 <h3>Our Wedding Day 💍</h3>
 <p>07-03-2024</p>
@@ -244,7 +189,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-birthday">
-<img src="test2.jpg.jpeg">
+<img src="test2.jpeg">
 <div>
 <h3>Your Birthday 🎂</h3>
 <p>09-04-2024</p>
@@ -253,7 +198,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-babyshower">
-<img src="test3.jpg.jpeg">
+<img src="test3.jpeg">
 <div>
 <h3>Baby Shower 🤰</h3>
 <p>20-10-2024</p>
@@ -262,7 +207,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-baby">
-<img src="test4.jpg">
+<img src="test4.jpeg">
 <div>
 <h3>Viyona Born 👶</h3>
 <p>17-11-2024</p>
@@ -271,7 +216,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-ann1">
-<img src="test5.jpg">
+<img src="test5.jpeg">
 <div>
 <h3>First Anniversary ❤️</h3>
 <p>07-03-2025</p>
@@ -280,7 +225,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-ann2">
-<img src="test6.jpg">
+<img src="test6.jpeg">
 <div>
 <h3>Second Anniversary 💖</h3>
 <p>07-03-2026</p>
@@ -294,29 +239,60 @@ I love you forever ❤️
 
 <button id="openGallery">View Memories</button>
 
+
+<!-- MEMORY SLIDES -->
+
 <div id="gallerySection" style="display:none">
 
 <button id="backTimeline">⬅ Back to Our Story</button>
 
-<div class="slideshow-container">
+<div class="memorySlider">
 
-<div class="slide"><img src="memory1.jpg"></div>
-<div class="slide"><img src="memory2.jpg"></div>
-<div class="slide"><img src="memory3.jpg"></div>
-<div class="slide"><img src="memory4.jpg"></div>
-<div class="slide"><img src="memory5.jpg"></div>
+<div class="memorySlide">
+<img src="img1.jpeg">
+<img src="img2.jpeg">
+<img src="img3.jpeg">
+<img src="img4.jpeg">
+</div>
 
+<div class="memorySlide">
+<img src="img5.jpeg">
+<img src="img6.jpeg">
+<img src="img7.jpeg">
+</div>
+
+<div class="memorySlide">
+<img src="img8.jpeg">
+<img src="img9.jpeg">
+<img src="img10.jpeg">
+<img src="img11.jpeg">
+</div>
+
+<div class="memorySlide">
+<img src="img12.jpeg">
+<img src="img13.jpeg">
+<img src="img14.jpeg">
+</div>
+
+<div class="memorySlide">
+<img src="img15.jpeg">
+<img src="img16.jpeg">
+<img src="img17.jpeg">
+<img src="img18.jpeg">
 </div>
 
 </div>
 
 </div>
+
+</div>
+
 
 <script>
 
 $(document).ready(function(){
 
-/* open love story */
+/* OPEN STORY */
 
 $("#openLove").click(function(){
 
@@ -329,29 +305,7 @@ $("#mainPage").fadeIn(1000);
 });
 
 
-/* floating hearts */
-
-var hearts=["💕","💖","💗","💓","💞","💘"];
-
-function createHeart(){
-
-var heart=$("<div class='heart'>"+hearts[Math.floor(Math.random()*hearts.length)]+"</div>");
-
-heart.css({
-left:Math.random()*100+"%",
-animationDuration:(Math.random()*3+3)+"s"
-});
-
-$("body").append(heart);
-
-setTimeout(function(){heart.remove();},6000);
-
-}
-
-setInterval(createHeart,300);
-
-
-/* love counter */
+/* LOVE COUNTER */
 
 var startDate=new Date("March 7, 2024");
 
@@ -368,9 +322,7 @@ var hours=Math.floor((diff/(1000*60*60))%24);
 var minutes=Math.floor((diff/(1000*60))%60);
 
 $("#days").text(days);
-
 $("#hours").text(hours);
-
 $("#minutes").text(minutes);
 
 }
@@ -378,7 +330,7 @@ $("#minutes").text(minutes);
 setInterval(updateCounter,1000);
 
 
-/* open gallery */
+/* OPEN MEMORIES */
 
 $("#openGallery").click(function(){
 
@@ -386,14 +338,14 @@ $(".timeline").hide();
 
 $("#gallerySection").fadeIn();
 
-slideIndex=0;
+memoryIndex=0;
 
-showSlides();
+startSlider();
 
 });
 
 
-/* back to timeline */
+/* BACK */
 
 $("#backTimeline").click(function(){
 
@@ -404,23 +356,23 @@ $(".timeline").fadeIn();
 });
 
 
-/* slideshow */
+/* SLIDER */
 
-var slideIndex=0;
+var memoryIndex=0;
 
-function showSlides(){
+function startSlider(){
 
-var slides=$(".slide");
+var slides=$(".memorySlide");
 
 slides.hide();
 
-slideIndex++;
+memoryIndex++;
 
-if(slideIndex>slides.length){slideIndex=1}
+if(memoryIndex>slides.length){memoryIndex=1;}
 
-slides.eq(slideIndex-1).show();
+slides.eq(memoryIndex-1).css("display","flex");
 
-setTimeout(showSlides,3000);
+setTimeout(startSlider,3000);
 
 }
 
@@ -430,3 +382,4 @@ setTimeout(showSlides,3000);
 
 </body>
 </html>
+
