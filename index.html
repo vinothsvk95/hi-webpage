@@ -9,6 +9,63 @@
 
 <style>
 
+.backBtn{
+position:absolute;
+top:20px;
+left:20px;
+background:white;
+color:#ff4d6d;
+}
+
+/* slider */
+
+.memorySlider{
+max-width:900px;
+margin:auto;
+margin-top:80px;
+}
+
+.memorySlide{
+display:none;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+animation:magicFade 1.5s;
+}
+
+/* BIG HEART PHOTOS */
+
+.memorySlide img{
+width:230px;
+height:230px;
+object-fit:cover;
+
+/* HEART SHAPE */
+
+clip-path: path("M100 30 C100 -10, 200 -10, 200 70 C200 140,100 190,100 190 C100 190,0 140,0 70 C0 -10,100 -10,100 30");
+
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+transition:transform .5s;
+}
+
+.memorySlide img:hover{
+transform:scale(1.2);
+}
+
+/* MAGIC FADE */
+
+@keyframes magicFade{
+from{
+opacity:0;
+transform:scale(.5);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}  
+  
 body{
 margin:0;
 font-family:Segoe UI;
@@ -180,7 +237,7 @@ I love you forever ❤️
 <div class="timeline">
 
 <div class="timeline-item card-wedding">
-<img src="test1.jpeg">
+<img src="test1.jpg.jpeg">
 <div>
 <h3>Our Wedding Day 💍</h3>
 <p>07-03-2024</p>
@@ -189,7 +246,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-birthday">
-<img src="test2.jpeg">
+<img src="test2.jpg.jpeg">
 <div>
 <h3>Your Birthday 🎂</h3>
 <p>09-04-2024</p>
@@ -198,7 +255,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-babyshower">
-<img src="test3.jpeg">
+<img src="test3.jpg.jpeg">
 <div>
 <h3>Baby Shower 🤰</h3>
 <p>20-10-2024</p>
@@ -207,7 +264,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-baby">
-<img src="test4.jpeg">
+<img src="test4.jpg">
 <div>
 <h3>Viyona Born 👶</h3>
 <p>17-11-2024</p>
@@ -216,7 +273,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-ann1">
-<img src="test5.jpeg">
+<img src="test5.jpg">
 <div>
 <h3>First Anniversary ❤️</h3>
 <p>07-03-2025</p>
@@ -225,7 +282,7 @@ I love you forever ❤️
 </div>
 
 <div class="timeline-item card-ann2">
-<img src="test6.jpeg">
+<img src="test6.jpg">
 <div>
 <h3>Second Anniversary 💖</h3>
 <p>07-03-2026</p>
@@ -244,7 +301,7 @@ I love you forever ❤️
 
 <div id="gallerySection" style="display:none">
 
-<button id="backTimeline">⬅ Back to Our Story</button>
+<button id="backTimeline" class="backBtn">⬅ Back</button>
 
 <div class="memorySlider">
 
@@ -252,10 +309,10 @@ I love you forever ❤️
 <img src="img1.jpeg">
 <img src="img2.jpeg">
 <img src="img3.jpeg">
-<img src="img4.jpeg">
 </div>
 
 <div class="memorySlide">
+<img src="img4.jpeg">
 <img src="img5.jpeg">
 <img src="img6.jpeg">
 <img src="img7.jpeg">
@@ -265,10 +322,10 @@ I love you forever ❤️
 <img src="img8.jpeg">
 <img src="img9.jpeg">
 <img src="img10.jpeg">
-<img src="img11.jpeg">
 </div>
 
 <div class="memorySlide">
+<img src="img11.jpeg">
 <img src="img12.jpeg">
 <img src="img13.jpeg">
 <img src="img14.jpeg">
@@ -278,12 +335,12 @@ I love you forever ❤️
 <img src="img15.jpeg">
 <img src="img16.jpeg">
 <img src="img17.jpeg">
-<img src="img18.jpeg">
 </div>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -338,7 +395,7 @@ $(".timeline").hide();
 
 $("#gallerySection").fadeIn();
 
-memoryIndex=0;
+memoryIndex = 0;
 
 startSlider();
 
@@ -358,23 +415,26 @@ $(".timeline").fadeIn();
 
 /* SLIDER */
 
-var memoryIndex=0;
+var memoryIndex = 0;
 
 function startSlider(){
 
-var slides=$(".memorySlide");
+var slides = $(".memorySlide");
 
 slides.hide();
 
 memoryIndex++;
 
-if(memoryIndex>slides.length){memoryIndex=1;}
+if(memoryIndex > slides.length){
+memoryIndex = 1;
+}
 
 slides.eq(memoryIndex-1).css("display","flex");
 
 setTimeout(startSlider,3000);
 
 }
+
 
 });
 
