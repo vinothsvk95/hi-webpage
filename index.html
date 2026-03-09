@@ -31,7 +31,7 @@ animation:fall linear infinite;
 100%{transform:translateY(100vh);opacity:0;}
 }
 
-/* floating memory frames */
+/* floating photos */
 
 .floating{
 position:fixed;
@@ -141,34 +141,14 @@ margin-left:10px;
 
 /* card colors */
 
-.card-wedding{
-background:linear-gradient(135deg,#FFD700,#FFC107);
-color:#000;
-}
+.card-wedding{background:linear-gradient(135deg,#FFD700,#FFC107);color:#000;}
+.card-birthday{background:linear-gradient(135deg,#00c6ff,#0072ff);}
+.card-babyshower{background:linear-gradient(135deg,#ff9a9e,#fecfef);color:#000;}
+.card-baby{background:linear-gradient(135deg,#a8ff78,#78ffd6);color:#000;}
+.card-ann1{background:linear-gradient(135deg,#ff416c,#ff4b2b);}
+.card-ann2{background:linear-gradient(135deg,#8e2de2,#4a00e0);}
 
-.card-birthday{
-background:linear-gradient(135deg,#00c6ff,#0072ff);
-}
-
-.card-babyshower{
-background:linear-gradient(135deg,#ff9a9e,#fecfef);
-color:#000;
-}
-
-.card-baby{
-background:linear-gradient(135deg,#a8ff78,#78ffd6);
-color:#000;
-}
-
-.card-ann1{
-background:linear-gradient(135deg,#ff416c,#ff4b2b);
-}
-
-.card-ann2{
-background:linear-gradient(135deg,#8e2de2,#4a00e0);
-}
-
-/* gallery */
+/* slideshow */
 
 .slideshow-container{
 max-width:700px;
@@ -194,16 +174,12 @@ from{opacity:.4}
 to{opacity:1}
 }
 
-@media(max-width:700px){
-.timeline-item{flex-direction:column;}
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- floating frames -->
+<!-- floating memory frames -->
 
 <img src="memory1.jpg" class="floating" style="left:5%;">
 <img src="memory2.jpg" class="floating" style="left:80%;animation-duration:18s;">
@@ -317,6 +293,8 @@ I love you forever ❤️
 
 <div id="gallerySection" style="display:none">
 
+<button id="backTimeline">⬅ Back to Our Story</button>
+
 <div class="slideshow-container">
 
 <div class="slide fade"><img src="memory1.jpg"></div>
@@ -334,7 +312,7 @@ I love you forever ❤️
 
 <script>
 
-/* open main page */
+/* open love story */
 
 $("#openLove").click(function(){
 $(".hero").fadeOut(800,function(){
@@ -343,11 +321,15 @@ $("#mainPage").fadeIn(1000);
 });
 
 
-/* falling hearts */
+/* hearts animation */
+
+var hearts=["💕","💖","💗","💓","💞","💘"];
 
 function createHeart(){
 
-var heart=$("<div class='heart'>💕</div>");
+var randomHeart=hearts[Math.floor(Math.random()*hearts.length)];
+
+var heart=$("<div class='heart'>"+randomHeart+"</div>");
 
 heart.css({
 left:Math.random()*100+"%",
@@ -385,18 +367,35 @@ $("#minutes").text(minutes);
 setInterval(updateCounter,1000);
 
 
-/* slideshow */
-
-var slideIndex=0;
+/* open memories */
 
 $("#openGallery").click(function(){
 
+$(".timeline").hide();
+
 $("#gallerySection").fadeIn();
+
+slideIndex=0;
 
 showSlides();
 
 });
 
+
+/* back to timeline */
+
+$("#backTimeline").click(function(){
+
+$("#gallerySection").hide();
+
+$(".timeline").fadeIn();
+
+});
+
+
+/* slideshow */
+
+var slideIndex=0;
 
 function showSlides(){
 
@@ -417,11 +416,11 @@ setTimeout(showSlides,3000);
 }
 
 
-/* hearts when slide changes */
+/* heart particles when slide changes */
 
 function createSlideHearts(){
 
-for(let i=0;i<10;i++){
+for(let i=0;i<8;i++){
 
 var heart=$("<div class='heart'>💖</div>");
 
@@ -432,14 +431,4 @@ animationDuration:"3s"
 
 $("body").append(heart);
 
-setTimeout(function(){heart.remove();},3000);
-
-}
-
-}
-
-</script>
-
-</body>
-</html>
-
+setTimeout(function(){heart.remove();},30
