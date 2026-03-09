@@ -1,9 +1,97 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First GitHub Page</title>
+<meta charset="UTF-8">
+<title>Happy Anniversary ❤️</title>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    text-align:center;
+    background: rgba(0,0,0,0.3);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+h1{
+    font-size:40px;
+}
+
+.message{
+    font-size:20px;
+    margin-top:20px;
+    display:none;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:25px;
+    background:white;
+    color:#ff4d6d;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#ffe6ec;
+}
+
+.heart{
+    font-size:40px;
+    display:none;
+}
+</style>
 </head>
-<body style="text-align:center; margin-top:100px; font-size:50px;">
-    HI
+
+<body>
+
+<div class="container">
+    <h1>Happy Anniversary ❤️</h1>
+
+    <button id="loveBtn">Click My Love</button>
+
+    <div class="message">
+        My dear wife,<br><br>
+        Every day with you is special.<br>
+        Thank you for filling my life with love,<br>
+        happiness, and beautiful memories.<br><br>
+        I love you forever ❤️
+    </div>
+
+    <div class="heart">💖 💕 💖</div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    $("#loveBtn").click(function(){
+        $(".message").fadeIn(1500);
+        $(".heart").fadeIn(2000).animate({
+            fontSize:"60px"
+        },1000);
+    });
+
+});
+</script>
+
 </body>
 </html>
+```
