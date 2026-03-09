@@ -8,6 +8,8 @@
 
 <style>
 
+  
+
 .backBtn{
 position:absolute;
 top:20px;
@@ -35,17 +37,23 @@ animation:magicFade 1.5s;
 /* BIG HEART PHOTOS */
 
 .memorySlide img{
-width:230px;
-height:230px;
+width:350px;
+height:350px;
 object-fit:cover;
-
-/* HEART SHAPE */
 
 clip-path: path("M100 30 C100 -10, 200 -10, 200 70 C200 140,100 190,100 190 C100 190,0 140,0 70 C0 -10,100 -10,100 30");
 
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+box-shadow:0 15px 35px rgba(0,0,0,.5);
 
 transition:transform .5s;
+}
+
+#gallerySection{
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
 
 .memorySlide img:hover{
@@ -389,29 +397,28 @@ setInterval(updateCounter,1000);
 /* OPEN MEMORIES */
 
 $("#openGallery").click(function(){
-
-$(".timeline").hide();
-
-$("#gallerySection").fadeIn();
-
-memoryIndex = 0;
-
-startSlider();
-
+    $(".timeline").hide();
+    $(".counter").hide();
+    $("h2").hide();
+    $("#openGallery").hide();
+    
+    $("#gallerySection").fadeIn();
+    memoryIndex = 0;
+    startSlider();
 });
 
-
 /* BACK */
-
 $("#backTimeline").click(function(){
 
 $("#gallerySection").hide();
 
 $(".timeline").fadeIn();
+$(".counter").fadeIn();
+$("h2").fadeIn();
+$("#openGallery").fadeIn();
 
 });
-
-
+  
 /* SLIDER */
 
 var memoryIndex = 0;
