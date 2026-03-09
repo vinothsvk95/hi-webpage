@@ -14,7 +14,24 @@ font-family:Segoe UI;
 background:linear-gradient(135deg,#ff758c,#ff7eb3);
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
+
+/* falling hearts */
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px);opacity:1;}
+100%{transform:translateY(100vh);opacity:0;}
+}
+
+/* first page */
 
 .hero{
 height:100vh;
@@ -40,6 +57,8 @@ display:none;
 padding:40px;
 }
 
+/* message */
+
 .message{
 font-size:22px;
 max-width:700px;
@@ -48,13 +67,14 @@ margin-bottom:50px;
 line-height:1.6;
 }
 
+/* timeline */
+
 .timeline{
 max-width:900px;
 margin:auto;
 }
 
 .timeline-item{
-background:rgba(255,255,255,0.15);
 padding:20px;
 border-radius:15px;
 margin-bottom:25px;
@@ -83,7 +103,6 @@ margin-top:5px;
 .event-desc{
 font-size:16px;
 margin-top:8px;
-opacity:0.9;
 }
 
 .icon{
@@ -91,13 +110,34 @@ font-size:40px;
 margin-left:10px;
 }
 
-/* different colors */
+/* Occasion card colors */
 
-.wedding{color:#ffd700;}
-.birthday{color:#00e5ff;}
-.baby{color:#a8ff60;}
-.ann1{color:#ffea00;}
-.ann2{color:#ffccff;}
+.card-wedding{
+background:linear-gradient(135deg,#FFD700,#FFC107);
+color:#000;
+}
+
+.card-birthday{
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+.card-babyshower{
+background:linear-gradient(135deg,#ff9a9e,#fecfef);
+color:#000;
+}
+
+.card-baby{
+background:linear-gradient(135deg,#a8ff78,#78ffd6);
+color:#000;
+}
+
+.card-ann1{
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+}
+
+.card-ann2{
+background:linear-gradient(135deg,#8e2de2,#4a00e0);
+}
 
 @media(max-width:700px){
 .timeline-item{
@@ -110,6 +150,8 @@ flex-direction:column;
 
 <body>
 
+<!-- FIRST PAGE -->
+
 <div class="hero">
 <h1>Happy Anniversary My Love ❤️</h1>
 <p>Click below to see our beautiful journey</p>
@@ -117,32 +159,35 @@ flex-direction:column;
 </div>
 
 
+<!-- MAIN PAGE -->
+
 <div id="mainPage">
 
 <h1>Our Love Story 💖</h1>
 
 <div class="message">
 My dear wife,<br><br>
+
 From the day we got married, my life became brighter and happier.<br>
 Every memory with you is priceless and beautiful.<br>
-Thank you for giving me the most wonderful family.<br>
-I will always love you forever ❤️
+
+Thank you for giving me the most wonderful family and our little angel Viyona.<br>
+
+I love you forever ❤️
 </div>
 
 
 <div class="timeline">
 
+<!-- Wedding -->
 
-<div class="timeline-item">
+<div class="timeline-item card-wedding">
 <img src="test1.jpg">
 <div>
-<div class="event-title wedding">
-Our Beautiful Wedding Day
-<span class="icon">💍</span>
+<div class="event-title">
+Our Beautiful Wedding Day <span class="icon">💍</span>
 </div>
-
 <div class="event-date">07-03-2024</div>
-
 <div class="event-desc">
 The best and most unforgettable day of my life when you became my wife.
 </div>
@@ -150,17 +195,15 @@ The best and most unforgettable day of my life when you became my wife.
 </div>
 
 
+<!-- Birthday -->
 
-<div class="timeline-item">
+<div class="timeline-item card-birthday">
 <img src="test2.jpg">
 <div>
-<div class="event-title birthday">
-My Wife's First Birthday After Marriage
-<span class="icon">🎂</span>
+<div class="event-title">
+My Wife's First Birthday After Marriage <span class="icon">🎂</span>
 </div>
-
 <div class="event-date">09-04-2024</div>
-
 <div class="event-desc">
 Celebrating your birthday together as husband and wife made it extra special.
 </div>
@@ -168,17 +211,31 @@ Celebrating your birthday together as husband and wife made it extra special.
 </div>
 
 
+<!-- Baby Shower -->
 
-<div class="timeline-item">
+<div class="timeline-item card-babyshower">
 <img src="test3.jpg">
 <div>
-<div class="event-title baby">
-Our Princess Was Born – Viyona
-<span class="icon">👶</span>
+<div class="event-title">
+Baby Shower Celebration <span class="icon">🤰</span>
+</div>
+<div class="event-date">20-10-2024</div>
+<div class="event-desc">
+A beautiful celebration waiting for our little princess to arrive.
+</div>
+</div>
 </div>
 
-<div class="event-date">17-11-2024</div>
 
+<!-- Baby Born -->
+
+<div class="timeline-item card-baby">
+<img src="test4.jpg">
+<div>
+<div class="event-title">
+Our Princess Was Born – Viyona <span class="icon">👶</span>
+</div>
+<div class="event-date">17-11-2024</div>
 <div class="event-desc">
 The day our little angel entered our lives and made our world complete.
 </div>
@@ -186,17 +243,15 @@ The day our little angel entered our lives and made our world complete.
 </div>
 
 
+<!-- First Anniversary -->
 
-<div class="timeline-item">
-<img src="test4.jpg">
+<div class="timeline-item card-ann1">
+<img src="test5.jpg">
 <div>
-<div class="event-title ann1">
-Our First Anniversary
-<span class="icon">❤️</span>
+<div class="event-title">
+Our First Anniversary <span class="icon">❤️</span>
 </div>
-
 <div class="event-date">07-03-2025</div>
-
 <div class="event-desc">
 One year of love, laughter, and beautiful memories together.
 </div>
@@ -204,17 +259,15 @@ One year of love, laughter, and beautiful memories together.
 </div>
 
 
+<!-- Second Anniversary -->
 
-<div class="timeline-item">
-<img src="test5.jpg">
+<div class="timeline-item card-ann2">
+<img src="test6.jpg">
 <div>
-<div class="event-title ann2">
-Our Second Anniversary
-<span class="icon">💖</span>
+<div class="event-title">
+Our Second Anniversary <span class="icon">💖</span>
 </div>
-
 <div class="event-date">07-03-2026</div>
-
 <div class="event-desc">
 Two amazing years together and a lifetime more to come.
 </div>
@@ -223,11 +276,12 @@ Two amazing years together and a lifetime more to come.
 
 
 </div>
-
 </div>
 
 
 <script>
+
+/* open love page */
 
 $("#openLove").click(function(){
 
@@ -238,6 +292,28 @@ $("#mainPage").fadeIn(1000);
 });
 
 });
+
+
+/* falling hearts */
+
+function createHeart(){
+
+var heart=$("<div class='heart'>💕</div>");
+
+heart.css({
+left:Math.random()*100+"%",
+animationDuration:(Math.random()*3+3)+"s"
+});
+
+$("body").append(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,300);
 
 </script>
 
